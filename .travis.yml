@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.1.1
+script:
+- RAILS_ENV=test bundle exec rake --trace db:create db:migrate
+branches:
+  only:
+  - master
+deploy:
+  provider: heroku
+  api_key:
+    secure: ML2EIyRi0SAFSCBK5gc77Qq7jZWwVz3YRxb/0kcnnhmvRdOfnNxAY/MNImIfiobfVv594m+t8TLMnSOF0nnAH18bvpgNl0V0mMst8ahDSeScfXAeAnvNYt86AsxVhru8yjHOA2RHszvupxXsbb5IsdXtnQ1F6malwcAL0nm66EI=
+  app: go-and-do
+  on:
+    repo: simplyaubs/go_and_do
